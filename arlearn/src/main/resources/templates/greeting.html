@@ -9,11 +9,24 @@
 </head>
 
 <body>
+
 <div class="container">
- <div class="col-6">
-        <p id="texto" th:text="'Hello, ' + ${name} + '!'" />
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p id="texto" th:text="'Hello, ' + ${name} + '!'" />
     </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
 </div>
+
    
      <script src="/js/jquery.js" th:href="@{/js/jquery.js}"></script>
     <script src="/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
