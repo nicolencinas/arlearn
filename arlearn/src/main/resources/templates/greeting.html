@@ -4,7 +4,7 @@
 <head>
     <link th:href="@{/css/style.css}" rel="stylesheet" />
     <link rel="stylesheet" th:href=@{/css/bootstrap.css}>
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -13,7 +13,11 @@
     <div class="centered">
         <div class="row">
           <div class="col-sm-12">
-            <p id="texto" th:text="'Hello, ' + ${name} + '!'" >
+            <div id="texto">
+              <img  th:src="@{/images/OnlineHoteLogo.png}" alt="">
+              <p th:text="'Hello, ' + ${name} + '!'" >
+
+            </div>
                 
           </div>
       </div>
