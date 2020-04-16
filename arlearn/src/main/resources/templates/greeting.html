@@ -7,11 +7,49 @@
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href=@{/css/flexslider.css} type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/jquery.flexslider.js" th:href=@{/js/jquery.flexslider.js}></script>
+    <script src="/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        touch: true,
+        pauseOnAction: false,
+        pauseOnHover: false,
+      });
+    });
+  </script>
 </head>
 
 <body>
   <div id="logo"></div>
   <p id="texto" th:text="'Hello, ' + ${name} + '!'" >
+
+
+
+<div class="flexslider" >
+  <ul class="slides">
+    <li>
+      <img src="images/1.jpg" th:href=@{/images/1.jpg} alt="">
+      <section class="flex-caption">
+        <p>LOREM IPSUM 1</p>
+      </section>
+    </li>
+    <li>
+      <img src="images/2.jpg" th:href=@{/images/2.jpg} alt="">
+      <section class="flex-caption">
+        <p>LOREM IPSUM 2</p>
+      </section>
+    </li>
+    <li>
+      <img src="images/3.jpg" th:href=@{/images/3.jpg} alt="">
+      <section class="flex-caption">
+        <p>LOREM IPSUM 3</p>
+      </section>
+    </li>
+  </ul>
+</div>
 
 <div class="container">
   <div class="row">
@@ -31,8 +69,7 @@
 </div>
 
    
-     <script src="/js/jquery.js" th:href="@{/js/jquery.js}"></script>
-    <script src="/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+   
     
 </body>
 
