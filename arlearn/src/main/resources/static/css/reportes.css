@@ -23,12 +23,12 @@ img
 
 .menu{
 	text-align: center;
-	border-radius: 30px;
-	background-color:rgba(201, 132, 13, 1);
+	border-radius: 15px;
+	background: linear-gradient(rgba(0, 0, 0, 0.80),transparent);
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	padding-top: 4em;
-	padding-bottom: 4em;
+	padding-top: 2em;
+	padding-bottom: 2em;
 	margin: 1.5em;
 	color: white;
 	

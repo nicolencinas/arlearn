@@ -17,6 +17,9 @@
 	margin-top: 3em;
 	width: 100%;
 	position: relative;
+	-webkit-box-shadow: 0px 10px 27px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 27px -7px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 27px -7px rgba(0,0,0,0.75);
 }
 
 .slides{
