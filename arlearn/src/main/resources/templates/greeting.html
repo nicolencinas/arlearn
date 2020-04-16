@@ -19,6 +19,8 @@
         pauseOnHover: false,
       });
     });
+
+    let video= document.getElementById("animacion")
   </script>
 </head>
 
@@ -52,9 +54,9 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-4">
-      <h3>Column 1</h3>
+      <h3>Column 9</h3>
       <p id="texto" th:text="'Hello, ' + ${name} + '!'" >
     </div>
     <div class="col-sm-4">
@@ -65,11 +67,56 @@
       <h3>Column 3</h3>
       <p>Lorem ipsum dolor..</p>
     </div>
-  </div>
-</div>
+  </div> -->
 
-   
-   
+  <div class="row centered" style="margin-bottom:3em">
+
+    <div class="col-sm-6">
+      <video id="animacion" src="/images/fold.mp4" th:src=@{/images/fold.mp4} th:href=@{/images/fold.mp4} autoplay loop muted> </video>
+    </div>
+    <div class="col-sm-6 bordeizq">
+      <h3 id="borde"><u> Excelencia de primer nivel.</u></h3>
+      <p id="borde">En Online hotel contamos con las suites empresariales de mayor nivel en todo el pais:
+        <br> <br>-Alojamiento con jardín
+        <br> -Garage privado
+        <br> -Servicio a la habitacion completo
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="row centered" style="margin-bottom:3em" >
+
+    
+    <div class="col-sm-6 bordeder">
+      <h3 id="borde"><u>Categorias diferenciales.</u></h3>
+      <p id="borde" >Contamos con una amplia gama de habitaciones, categorizadas por tipo de servicio y precios </p>
+    </div>
+
+    <div class="col-sm-6">
+      <img id="animacion" src="/images/calificaciones.png" th:src=@{/images/calificaciones.png} th:href=@{/images/calificaciones.png}>
+    </div>
+    
+    
+  </div>
+
+  <div class="row centered" style="margin-bottom:3em" >
+
+    
+    <div class="col-sm-6">
+      <img id="animacion" src="/images/fondoReporte.png" th:src=@{/images/fondoReporte.png} th:href=@{/images/fondoReporte.png}>
+
+    </div>
+
+    <div class="col-sm-6 bordeizq">
+      <h3 id="borde"><u>Estandares de calidad asegurados.</u></h3>
+      <p id="borde" >Trabajamos constatemente para asegurar los estandares que nuestros clientes esperan, controlando minusciosamente todos los aspectos en la organizacion de nuestra empresa</p>
+    </div>
+    
+    
+  </div>
+  
+</div>
     
 </body>
 

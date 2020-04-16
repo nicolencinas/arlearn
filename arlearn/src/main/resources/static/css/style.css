@@ -27,6 +27,43 @@
 
 }
 
+#animacion{
+	
+	
+	width: 100%;
+	height: auto;
+
+}
+
+#borde
+{
+	padding: 0.5em;
+}
+
+
+.bordeizq
+{
+
+-webkit-box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
+-moz-box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
+box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
+border-radius: 20px 0 20px 20px;
+background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 90%);
+}
+.bordeder
+{
+-webkit-box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
+-moz-box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
+box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
+background: rgb(2,0,36);
+
+
+
+border-radius: 20px 20px 20px 0;
+background: linear-gradient(-45deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 90%);
+}
+
 #logo
 {
  position: absolute;
