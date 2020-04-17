@@ -73,7 +73,7 @@ box-shadow: 0px 10px 27px -7px rgba(0,0,0,0.75);
 	text-decoration: none;
 	position: absolute;
 	top: 50%;
-	z-index: 999;
+	z-index: 999999999;
 	width: 40px;
 	height: 40px;
 	overflow: hidden;
@@ -87,6 +87,7 @@ box-shadow: 0px 10px 27px -7px rgba(0,0,0,0.75);
 
 .flex-direction-nav .flex-prev{
 	left: 0;
+
 }
 
 .flex-direction-nav .flex-next{
