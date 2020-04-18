@@ -9,17 +9,16 @@
 	display: flex-box;
 	background-color:transparent;	
 	text-align:center;
-	font-size: 1.5em;
+	font-size: 1.8em;
 	color:black;
 	border-radius: 0 0 1em 1em;
 	margin-bottom: 1.5em;
-	font-family: 'Montserrat';
 	transition: all 0.5s  ease-in-out;
 	opacity: 1;
 	justify-content: center;
 	align-items: center;
 	text-align: center;	
-	padding: 1.2em;
+	padding: 1em;
 	box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.082);
 	background-image: url(../images/foild.png);
 	
@@ -55,27 +54,60 @@ box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.50);
 .bordeizq
 {
 
--webkit-box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
--moz-box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
-box-shadow: 132px -132px 0px -130px rgba(0,0,0,0.75);
-border-radius: 20px 0 20px 20px;
+-webkit-box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
+-moz-box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
+box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
 background: rgb(2,0,36);
-background: linear-gradient(45deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 90%);
-box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.082);
+background: linear-gradient(30deg, rgba(2,0,36,0) 30%, rgba(255,255,255,1) 70%);
+overflow: hidden;
 
+}
+.bordeizq::before,.bordeder::before
+{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	content: "+ Ver Mas";
+	width: 90px;
+	height: 40px;
+	font-size: 1em;
+	background-color: rgba(201,163,13,0.75);
+	right: -70px;
+	top: 70%;
+	border-radius: 15px 0 0 15px;
+	transition: all 0.8s ease-in-out;
+}
+.bordeder::before
+{
+content: "Ver Mas +";
+left: 0;
+border-radius: 0px 15px 15px 0px;
+left:-70px;
+}
+
+.bordeizq:hover::before,.bordeder:hover::before
+{
+	width: 16%;
+	right: 0;
+	box-shadow: 0 6px 12px 0 rgba(223, 180, 9, 0.65);
+
+}
+.bordeder:hover::before
+{
+ left: 0;
+ content: "Ver Mas +";
 }
 .bordeder
 {
--webkit-box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
--moz-box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
-box-shadow: -132px 132px 0px -130px rgba(0,0,0,0.75);
+-webkit-box-shadow: -142px 132px 0px -130px rgba(201,163,13,0.75);
+-moz-box-shadow: -132px 132px 0px -130px rgba(201,163,13,0.75,0,0,0.75);
+box-shadow: -132px 132px 0px -130px rgba(201,163,13,0.75);
 
 background: rgb(2,0,36);
-
-
-
-border-radius: 20px 20px 20px 0;
-background: linear-gradient(-45deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 90%);
+background: linear-gradient(-150deg, rgba(2,0,36,0) 30%, rgba(255,255,255,1) 70%);
+overflow: hidden;
 }
 
 #logo
@@ -84,11 +116,22 @@ background: linear-gradient(-45deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 90%);
  background-image: url(../images/OnlineHoteLogo2.png);
  background-size: contain;
  width: 9em;
- height: 300px;
+ height: 275px;
  background-repeat: no-repeat;
  z-index: 99;
  margin-left: 40px;
  margin-top: -40px;
+
+}
+
+#logo:hover
+{
+	background-image: url(../images/banderinlogo.gif);
+	margin-top: -34px;
+	margin-left: 35px;
+	
+	height: 285px;
+	box-shadow: rgba(0, 0, 0, 0.562);
 
 }
 
@@ -98,11 +141,5 @@ body
 	background-size: cover;
 }
 
-
-#texto:hover
-{
-	color: black;
-	margin-bottom: 2em;
-}
 
 
