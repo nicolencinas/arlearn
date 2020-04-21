@@ -2,6 +2,15 @@
 
 *{
 	font-family: 'Gotu', sans-serif;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.col-sm-6
+{
+	padding-left: 0px;
+	padding-right: 0px;
+	
 }
 #texto,#menu
 {
@@ -34,16 +43,12 @@
 #animacion
 {
 	
-	
+	position: relative;
 	width: 100%;
 	height: auto;
 	-webkit-box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.50);
 -moz-box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.50);
 box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.50);
-margin: -2px;
-
-
-
 }
 
 #borde
@@ -52,17 +57,23 @@ margin: -2px;
 }
 
 
+
 .bordeizq
 {
 
 -webkit-box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
 -moz-box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
 box-shadow: 132px -132px 0px -130px rgba(201,163,13,0.75);
-background: rgb(2,0,36);
+
 background: linear-gradient(30deg, rgba(2,0,36,0) 30%, rgba(255,255,255,1) 70%);
 overflow: hidden;
+padding: -1em;
+margin: 0;
+
 
 }
+
+
 .bordeizq::before,.bordeder::before
 {
 	display: flex;
@@ -109,6 +120,8 @@ box-shadow: -132px 132px 0px -130px rgba(201,163,13,0.75);
 background: rgb(2,0,36);
 background: linear-gradient(-150deg, rgba(2,0,36,0) 30%, rgba(255,255,255,1) 70%);
 overflow: hidden;
+
+
 }
 
 #logo

@@ -6,31 +6,9 @@
 
 body
 {
-	background-image: url(../images/fondoReporte.jpg);
+	background-image: url(../images/fondo.jpg);
 	background-size: cover;
 }
 
-img
-{
-	display: block;
-	box-align: left;
-	position: absolute;
-	width: auto;
-	height: 90%;
-	margin-top: -30px;
-	
-}
 
-.menu{
-	text-align: center;
-	border-radius: 15px;
-	background: linear-gradient(rgba(0, 0, 0, 0.80),transparent);
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	padding-top: 2em;
-	padding-bottom: 2em;
-	margin: 1.5em;
-	color: white;
-	
-}
 
