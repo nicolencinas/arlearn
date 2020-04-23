@@ -34,6 +34,17 @@
 
 
 }
+
+.licencia
+{
+ background-image: radial-gradient(circle, #c9840d, #c98a18, #c99021, #c9962a, #c99c32, #cda43b, #d1ab44, #d5b34d, #dec059, #e7cc65, #efd971, #f8e67d);;
+ border-radius: 10px;
+ padding: 10px;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ width: 300px;
+}
 .centered{
 	display: flex;
 	justify-content: center;
