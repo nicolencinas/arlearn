@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    
+    <link rel="stylesheet" th:href=@{/css/bootstrap.css}>
+    <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italianno&display=swap" rel="stylesheet">
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href=@{/css/jquery-ui.css} type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href=@{/css/eventos.css}>
+
+    <script src="/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+    
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+</head>
+
+<body>
+  <div id="logo"></div>
+  
+  <p id="texto"><img src="/images/izquierda.svg" alt="" width="34px">Gestión del salón de eventos<img src="/images/derecha.svg" alt="" width="34px"></p>
+
+
+<div class="container">
+
+ <div class="row">
+  <p>Fecha de check-in:   <input type="text" id="datepicker"></p>
+
+ </div>
+  
+</div>
+    
+</body>
+
+</html>

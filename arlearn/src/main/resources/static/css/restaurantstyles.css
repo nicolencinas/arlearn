@@ -1,0 +1,50 @@
+body
+{
+	background-image: url(../images/4031.jpg);
+	background-size: cover;
+}
+
+#logo{
+    background-image: url(../images/salonRestaurant.png);
+}
+#m1,#m2,#m3,#m4,#m5,#m6,#m7,#m8,#m9,#m10,#m11,#m12,#m13,#m14,#m15{
+    fill: rgba(255, 255, 255, 0.623);
+    stroke: none;
+    transition:all 0.5s ease-in-out ;
+    cursor: pointer;
+}
+
+#m1:hover,#m2:hover,#m3:hover,#m4:hover,#m5:hover,#m6:hover,#m7:hover,#m8:hover,#m9:hover,#m10:hover,#m11:hover,#m12:hover,#m13:hover,#m14:hover,#m15:hover
+{
+    fill: rgba(255, 217, 0, 0.85);
+}
+
+.st0
+{fill:rgba(255, 255, 255, 1);
+}
+
+.pathbarra{
+    fill:rgba(255, 255, 255, 0.664);
+}
+#numeromesa{
+    stroke:#000000;stroke-miterlimit:10;
+    font-family:'Gotu-Regular';
+    font-size:85px;
+}
+
+#ba1,#ba2,#ba3,#ba4,#ba5,#ba6,#ba7{
+    fill: black;
+    font-family:'Gotu-Regular';
+    font-size:85px;
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+#ba1:hover,#ba2:hover,#ba3:hover,#ba4:hover,#ba5:hover,#ba6:hover,#ba7:hover{
+    
+    fill:red;
+    font-size:95px;
+    box-shadow: 6px 6px 12px 12px rgba(0, 0, 0, 0.781);
+}
+
