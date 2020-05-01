@@ -17,9 +17,14 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.awt.Desktop;
+import java.awt.Color;
+
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import java.net.URI;
 import java.net.URL;
 
@@ -32,7 +37,13 @@ public class MySystemTray {
     
     private JFrame parent;
     private PopupMenu popup = new PopupMenu();
-    private final Image image =new ImageIcon("C:/Users/nickito/git/arlearn/arlearn/src/main/resources/static/images/logo.png").getImage() ;
+    private final ImageIcon icon =new ImageIcon("C:/Users/nickito/git/arlearn/arlearn/src/main/resources/static/images/logo.png");
+
+    private final ImageIcon logoIm =new ImageIcon("C:/Users/nickito/git/arlearn/arlearn/src/main/resources/static/images/logoOH.png");
+    private final Icon logo=new ImageIcon(logoIm.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT));
+
+
+    private final Image image =icon.getImage() ;
     private final TrayIcon trayIcon = new TrayIcon(image, "Panel de control(Online Hotel)", popup);    
     
     /**
@@ -42,10 +53,35 @@ public class MySystemTray {
     public MySystemTray( JFrame frame)
     {
     this.parent = frame;
-    JButton eventos=new JButton("Gestión de eventos");
     frame.setLayout(null);
-    eventos.setBounds(60, 10, 200, 20);
+
+
+    JButton home=new JButton();
+    home.setBounds(150, 10, 110, 110);
+    home.setToolTipText("HomePage");
+    home.setIcon(logo);
+    home.setOpaque(true);
+    
+    
+    JButton eventos=new JButton("Gestión salon eventos");
+    eventos.setBounds(100, 120, 200, 20);
+
+    JButton recepcion=new JButton("Gestión de habitaciones");
+    recepcion.setBounds(100, 150, 200, 20);
+
+    JButton restaurant=new JButton("Gestión salon restaurant");
+    restaurant.setBounds(100, 180, 200, 20);
+
+    JButton reportes=new JButton("Gestión de reportes");
+    reportes.setBounds(100, 210, 200, 20);
+
     frame.getContentPane().add(eventos);
+    frame.getContentPane().add(recepcion);
+    frame.getContentPane().add(restaurant);
+    frame.getContentPane().add(reportes);
+    frame.getContentPane().add(home);
+
+
 
     //comprueba si SystemTray es soportado en el sistema
     if (SystemTray.isSupported())
@@ -54,31 +90,7 @@ public class MySystemTray {
       SystemTray systemtray = SystemTray.getSystemTray();
       trayIcon.setImageAutoSize(true);
         
-      //acciones del raton sobre el icono en la barra de tareas
-        MouseListener mouseListener = new MouseListener() {
-
-            @Override
-            public void mouseClicked(MouseEvent evt) {            
-
-                //Si se presiona con el boton izquierdo en el icono
-                //y la aplicacion esta minimizada se muestra una frase
-                if( evt.getButton() == MouseEvent.BUTTON1 && parent.getExtendedState()==JFrame.ICONIFIED ){
-                        MensajeTrayIcon("Steve Wozniak\n \"El Internet de las cosas es el futuro,\n todos los dispositivos conectados todo el tiempo\"", MessageType.WARNING);
-                }            
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent evt) {/*nada x aqui circulen...*/}
-
-            @Override
-            public void mouseExited(MouseEvent evt) {/*nada x aqui circulen...*/}
-
-            @Override
-            public void mousePressed(MouseEvent evt) {/*nada x aqui circulen...*/}
-
-            @Override
-            public void mouseReleased(MouseEvent evt) {/*nada x aqui circulen...*/}
-        };
+      
 
         /* ----------------- ACCIONES DEL MENU POPUP --------------------- */
         //Salir de aplicacion
@@ -107,7 +119,7 @@ public class MySystemTray {
         
         /* ----------------- ACCIONES DEL MENU POPUP : END ---------------- */
         
-        trayIcon.addMouseListener(mouseListener);
+      
 
         //Añade el TrayIcon al SystemTray
         try 
@@ -131,39 +143,53 @@ public class MySystemTray {
         }
     });
 
-    eventos.addActionListener(new ActionListener()
-    {
+    eventos.addActionListener(a -> gotoURL("http://127.0.0.1:8080/eventos",a));
+    recepcion.addActionListener(b -> gotoURL("http://127.0.0.1:8080/habitacion",b));
+    restaurant.addActionListener(c -> gotoURL("http://127.0.0.1:8080/restaurant",c));
+    home.addActionListener(d -> gotoURL("http://127.0.0.1:8080/greeting", d));
+    reportes.addActionListener(e -> gotoURL("http://127.0.0.1:8080/reportes", e));
 
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            try {
-                URL url = new URL("http://127.0.0.1:8080/eventos");
-                try {
-                    Desktop.getDesktop().browse(url.toURI());
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                } catch (URISyntaxException ex) {
-                    ex.printStackTrace();
-                }
-            } catch (MalformedURLException e1) {
-                e1.printStackTrace();
-            }
-
-        }
-
-    });
-
-    }
-
-    //Muestra una burbuja con la accion que se realiza
-    public void MensajeTrayIcon(String texto, MessageType tipo)
-    {
-        trayIcon.displayMessage("Mi Aplicación dice:", texto, tipo);        
-    }
     
-    /**
-     * clase interna que manejara una accion en segundo plano
-     */
+    // {
+
+    //     @Override
+    //     public void actionPerformed(ActionEvent e)
+    //     {
+    //         try {
+    //             URL url = new URL("http://127.0.0.1:8080/eventos");
+    //             try {
+    //                 Desktop.getDesktop().browse(url.toURI());
+    //             } catch (IOException ex) {
+    //                 ex.printStackTrace();
+    //             } catch (URISyntaxException ex) {
+    //                 ex.printStackTrace();
+    //             }
+    //         } catch (MalformedURLException e1) {
+    //             e1.printStackTrace();
+    //         }
+
+    //     }
+
+    // });
+
+    }
+
+    public void gotoURL(String ur,ActionEvent e) 
+    {
+        try {
+            URL url = new URL(ur);
+            try {
+                Desktop.getDesktop().browse(url.toURI());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (URISyntaxException ex) {
+                ex.printStackTrace();
+            }
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    
 
 }

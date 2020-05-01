@@ -13,6 +13,10 @@ import javax.swing.WindowConstants;
 
 public class TestSTrayFrame extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private static TestSTrayFrame INSTANCE;
 
     public static TestSTrayFrame getInstance() {
@@ -31,7 +35,7 @@ public class TestSTrayFrame extends JFrame {
     }
     
     private void initComponents(){
-        setTitle("Test SystemTray java");
+        setTitle("Online Hotel (Panel Control)");
         setSize(new Dimension(400,300));
         setPreferredSize(new Dimension(400,300));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);        
