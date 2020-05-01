@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ArlearnApplication {
 
-	static TestSTrayFrame trayFrame = TestSTrayFrame.getInstance();
+	static TestSTrayFrame trayFrame = new TestSTrayFrame();
 
 	private static Logger Log = LoggerFactory.getLogger(ArlearnApplication.class);
 
