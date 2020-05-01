@@ -38,7 +38,9 @@ public class TestSTrayFrame extends JFrame {
         setTitle("Online Hotel (Panel Control)");
         setSize(new Dimension(400,300));
         setPreferredSize(new Dimension(400,300));
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);        
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
+        setSize(310, 600);   
+        setResizable(false);    
     }
     
      public  void panelControl(String args[]){
