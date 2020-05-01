@@ -11,13 +11,66 @@
    transform: translateX(-0.5em)
 }
 
-#next:hover{
+#next:hover
+{
     transform: translateX(0.5em)
+}
+
+.textcolor
+{
+    user-select: none;
 
 }
 
 #mesnombre,#numeromes,#numeroanio
 {
 	font-family: 'Gotu', sans-serif;
+}
+
+#calendario
+{
+    enable-background:new 0 0 1500 855.7;
+    margin-top: 6em;
+     width: 0%;
+     transition: all 1.2s ease-in-out;
+     transform-origin: left;
+
 
 }
+
+#showCalendar
+{
+ padding: 0.8em;
+ background-color: rgba(255, 217, 0, 0.416);
+ text-decoration: none;
+ border: 0px;
+ border-radius: 2px;
+ position: absolute;
+
+}
+
+i{
+    font-size: 1.5em;
+}
+
+#yearSelection
+{
+position: relative;
+}
+
+#yearSelection::before
+{
+content: "tuviejaentanga";
+display: block;
+position: absolute;
+width:200px;
+height: 500px;
+top: 200px;
+background-color: cadetblue;
+}
+
+
+
+
+
+
