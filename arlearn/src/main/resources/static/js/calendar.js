@@ -21,7 +21,6 @@ function llenarCalendario(anio,mes)
 
     var numberMonth=document.getElementById("numeromes");
     var currentMonth=(currentDate.getMonth()+1)+"";
-    console.log(currentMonth+" "+currentMonth.length)
 
     var large=currentMonth.length;
     if (large==2)
@@ -60,10 +59,15 @@ function daysInMonth(mes, año)
 
 function getInformation(celd)
 {
-    var day=celd.innerHTML;
+    var day=celd;
     var month=document.getElementById("numeromes").innerHTML;
     var year=document.getElementById("numeroanio").innerHTML;
-    console.log(day+"/"+month+"/"+year)
+    var selectedDate= year+"-"+month+"-"+day;
+
+    document.getElementById("fechaEvento").value=selectedDate;
+    alert("tu bieja")
+
+    console.log(day+"-"+month+"-"+year);
 }
 
 function prevMonth()
@@ -82,7 +86,6 @@ function prevMonth()
     }
 
     llenarCalendario(year,month);
-    console.log(year+" "+month)
 
 
 }
@@ -103,27 +106,9 @@ function nextMonth()
     }
 
     llenarCalendario(year,month);
-    console.log(year+" "+month)
 }
 
-function showCalendar()
-{
-var calendar=document.getElementById("calendario").style.width
 
-if (calendar=="0%")
-{
-    document.getElementById("calendario").style.width="60%";
-    document.getElementById("showCalendar").innerHTML="<i class='fas fa-calendar-times'></i> Ocultar Calendario";
-    console.log("hizo click")
-}
-else
-{
-document.getElementById("calendario").style.width="0%";
- document.getElementById("showCalendar").innerHTML="<i class='far fa-calendar-plus'></i> Ver calendario";
- console.log("hizo click")
-}
- 
-}
 
 
 

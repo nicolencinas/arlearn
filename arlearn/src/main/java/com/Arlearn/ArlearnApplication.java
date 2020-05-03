@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ArlearnApplication {
 
-	static TestSTrayFrame trayFrame = new TestSTrayFrame();
+	//static TestSTrayFrame trayFrame = new TestSTrayFrame();
 
 	private static Logger Log = LoggerFactory.getLogger(ArlearnApplication.class);
 
@@ -23,7 +23,7 @@ public class ArlearnApplication {
 
 		SpringApplication.run(ArlearnApplication.class, args);
 		Log.info("Holis soy un logger");
-		trayFrame.panelControl(args);
+		//trayFrame.panelControl(args);
 		
 	
 	}
