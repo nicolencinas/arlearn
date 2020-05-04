@@ -69,7 +69,6 @@ public class TestSTrayFrame extends JFrame
         });
 
         
-        
         PopupMenu popup = new PopupMenu();
         final ImageIcon icon =new ImageIcon("C:/Users/nickito/git/arlearn/arlearn/src/main/resources/static/images/logo.png");
 
@@ -138,11 +137,11 @@ public class TestSTrayFrame extends JFrame
         getContentPane().add(reportes);
         getContentPane().add(home);
         
-        eventos.addActionListener(a -> gotoURL("http://127.0.0.1:8080/eventos",a));
-        recepcion.addActionListener(b -> gotoURL("http://127.0.0.1:8080/recepcion",b));
-        restaurant.addActionListener(c -> gotoURL("http://127.0.0.1:8080/restaurant",c));
-        home.addActionListener(d -> gotoURL("http://127.0.0.1:8080/homepage", d));
-        reportes.addActionListener(e -> gotoURL("http://127.0.0.1:8080/reportes", e));
+        eventos.addActionListener(a -> gotoURL("http://localhost:8090/eventos",a));
+        recepcion.addActionListener(b -> gotoURL("http://localhost:8090/recepcion",b));
+        restaurant.addActionListener(c -> gotoURL("http://localhost:8090/restaurant",c));
+        home.addActionListener(d -> gotoURL("http://localhost:8090/homepage", d));
+        reportes.addActionListener(e -> gotoURL("http://localhost:8090/reportes", e));
         
         ActionListener exitListener = (ActionEvent e) -> 
         {

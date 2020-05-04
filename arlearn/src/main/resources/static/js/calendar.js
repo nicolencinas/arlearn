@@ -1,7 +1,21 @@
 
 function llenarCalendario(anio,mes)
 {
-
+	 $.ajax({
+	        url: 'http://localhost:8085/reservation/1',
+	        type: 'GET',
+			contentType: "application/json",
+			dataType : "json",
+			crossDomain:true,
+			success: function(json) {
+					result = JSON.parse(JSON.stringify(json));
+	        },
+	        error: function(error) {
+				console.log(error.responseText);
+				
+	            alert('Disculpe, existió un problema');
+	        }
+	    });
     var monthNames=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
     var displacementdays=[0, 1, 2, 3, 4, 5,6];
     
