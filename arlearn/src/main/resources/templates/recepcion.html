@@ -126,11 +126,11 @@
        .st4{opacity:0.95;}
        .st5{fill:#FEAE00;}
        .st6{fill:none;}
-       .st7{font-family:'Gotu-Regular';}
-       .st8{font-size:77.0057px;}
-       .st9{font-size:159.935px;}
-       .st10{font-size:94.7763px;}
-       .st11{font-size:41.4646px; float: left; cursor: pointer;}
+       .st7{font-family:'Gotu-Regular';animation:all 0.5s ease-in-out;}
+       .st8{font-size:77.0057px;animation:all 0.5s ease-in-out;}
+       .st9{font-size:159.935px;animation:all 0.5s ease-in-out;}
+       .st10{font-size:94.7763px;animation:all 0.5s ease-in-out;}
+       .st11{font-size:41.4646px; float: left; cursor: pointer;animation:all 0.5s ease-in-out;}
      </style>
      <rect x="182" y="290.7" class="st0" width="823" height="463"/>
      <rect x="182.1" y="291.5" class="st1" width="823.7" height="60.4"/>
@@ -601,25 +601,12 @@
        <p class="division">Horarios  alquilados:</p>
        <p id="horaAlquiler">De 9:00 a 12:00</p>
        <p id="horaAlquiler">De 13:00 a 14:00</p>
-       
-  
-  
-  
+      
      </div>
      
       </div>
-    
-  
-   
     </div>
   </div>
-  
-
-  
-
-
-
-
 <div id="principalContainer" class="container" style="margin-top: 10em;">
 
  <div class="row">
@@ -668,6 +655,9 @@ var checkout=0;
       rango[0]=inicio;
       
       console.log(rango);
+      this.style.fill="blue";
+      this.style.fontSize="45px"
+
 
     }
     else if (rango[1]==null)
@@ -684,10 +674,16 @@ var checkout=0;
       rango[1]=fin;
       console.log(rango);
 
+      this.style.fill="blue"
+      this.style.fontSize="45px"
 
-      for (var e=rango[0];e<=rango[1];e++)
+
+      for (var e=rango[0]+1;e<rango[1];e++)
       {
         document.getElementById("dia"+e).style.fill="red"
+        document.getElementById("dia"+e).style.fontSize="45px"
+       // 41.4646px
+
       }
 
     }
@@ -696,9 +692,14 @@ var checkout=0;
       for (var i=1;i<=37;i++)
       {
         document.getElementById("dia"+i).style.fill="black"
+        document.getElementById("dia"+i).style.fontSize="41.4646px"
+
       }
 
       checkin=this.id;
+      this.style.fill="blue"
+      this.style.fontSize="45px"
+
 
       var month=document.getElementById("numeromes").innerHTML;
       var year=document.getElementById("numeroanio").innerHTML;
@@ -712,20 +713,26 @@ var checkout=0;
       rango=[inicio,null];
     
     }
-
-    // var month=document.getElementById("numeromes").innerHTML;
-    // var year=document.getElementById("numeroanio").innerHTML;
-    // var selectedDate= year+"-"+month+"-"+day;
-    // var selectedDateBar=day+"/"+month+"/"+year;
-
-    // document.getElementById("checkin").value=selectedDate;
-    // document.getElementById("fechaAlquiler").innerHTML=selectedDateBar;
-    // this.style.fill="red";  
     }
     )
       
     
   }
+
+  $('#ninios').focusout(function()
+{
+  var cant=document.getElementById("ninios").value;
+  var cantninios=parseInt(cant);
+
+  var numeracion=["primer","segundo","tercer","cuarto","quinto","sexto","septimo","octavo","noveno","decimo"];
+
+  $('#edades').empty();
+
+  for (var i=1;i<=cantninios;i++)
+  {
+    $('#edades').append('<input id="edad'+i+'" class="formItem"  type="number" placeholder="Edad del '+numeracion[i-1]+ ' niño" max="17" >');
+  }
+});
 
   </script>
 

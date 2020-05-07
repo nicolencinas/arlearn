@@ -48,30 +48,12 @@ function getReservations()
 
         
             i++;
-
-
-
-
-
     });
 
     
 }
 
 
-$('#ninios').focusout(function()
-{
-  var cant=document.getElementById("ninios").value;
-  var cantninios=parseInt(cant);
 
-  var numeracion=["primer","segundo","tercer","cuarto","quinto","sexto","septimo","octavo","noveno","decimo"];
-
-  $('#edades').empty();
-
-  for (var i=1;i<=cantninios;i++)
-  {
-    $('#edades').append('<input id="edad'+i+'" class="formItem"  type="number" placeholder="Edad del '+numeracion[i-1]+ ' niño" max="17" >');
-  }
-});
 
 

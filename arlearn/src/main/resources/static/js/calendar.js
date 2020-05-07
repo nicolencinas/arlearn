@@ -87,6 +87,11 @@ function prevMonth()
     }
 
     llenarCalendario(year,month);
+    for (var i=1;i<=37;i++)
+    {
+      document.getElementById("dia"+i).style.fill="black"
+      document.getElementById("dia"+i).style.fontSize="41.4646px"
+    }
 
 
 }
@@ -107,6 +112,12 @@ function nextMonth()
     }
 
     llenarCalendario(year,month);
+
+    for (var i=1;i<=37;i++)
+    {
+      document.getElementById("dia"+i).style.fill="black"
+      document.getElementById("dia"+i).style.fontSize="41.4646px"
+    }
 }
 
 
