@@ -57,7 +57,13 @@ i{
 #category
 {
     width: 75px;
-}
+/*     filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+ */}
 #dates{
 flex-direction: row;
+}
+
+.edadesninios
+{
+transition: all 0.5s ease-in-out;
 }
