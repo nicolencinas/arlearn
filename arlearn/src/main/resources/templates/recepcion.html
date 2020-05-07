@@ -635,14 +635,16 @@ var rango=[null,null];
 var checkin=0;
 var checkout=0;
 
+
   for (var i=1;i<=37;i++)
   {
     $("#dia"+i).click
     ( 
+
     function()
     {
-    var day=parseInt(this.innerHTML);
 
+    var day=parseInt(this.innerHTML);
   
     if (day/10<1)
     {
@@ -653,16 +655,19 @@ var checkout=0;
 
     if (rango[0]==null)
     {
+      checkin=this.id;
+
       var month=document.getElementById("numeromes").innerHTML;
       var year=document.getElementById("numeroanio").innerHTML;
       var selectedDate= year+"-"+month+"-"+day;
       document.getElementById("checkin").value=selectedDate;
 
-      this.style.fill="red"; 
-      checkin=this.id;
-      
+      var inicio=checkin.substring(3,checkin.lenght);
+      inicio=parseInt(inicio);
 
-      rango[0]=0;
+      rango[0]=inicio;
+      
+      console.log(rango);
 
     }
     else if (rango[1]==null)
@@ -672,26 +677,42 @@ var checkout=0;
       var selectedDate= year+"-"+month+"-"+day;
       document.getElementById("checkout").value=selectedDate;
 
-      this.style.fill="red"; 
       checkout=this.id;
+      var fin=checkout.substring(3,checkout.lenght);
+      fin=parseInt(fin)
 
-      rango[1]=0;
+      rango[1]=fin;
+      console.log(rango);
 
-      console.log(checkin+"-"+checkout);
+
+      for (var e=rango[0];e<=rango[1];e++)
+      {
+        document.getElementById("dia"+e).style.fill="red"
+      }
+
     }
     else
     {
+      for (var i=1;i<=37;i++)
+      {
+        document.getElementById("dia"+i).style.fill="black"
+      }
+
+      checkin=this.id;
+
       var month=document.getElementById("numeromes").innerHTML;
       var year=document.getElementById("numeroanio").innerHTML;
       var selectedDate= year+"-"+month+"-"+day;
       document.getElementById("checkin").value=selectedDate;
-
-     
       document.getElementById("checkout").value="";
 
-      rango=[0,null];
-      console.log(rango)
+      var inicio=checkin.substring(3,checkin.lenght);
+      inicio=parseInt(inicio);
+
+      rango=[inicio,null];
+    
     }
+
     // var month=document.getElementById("numeromes").innerHTML;
     // var year=document.getElementById("numeroanio").innerHTML;
     // var selectedDate= year+"-"+month+"-"+day;
