@@ -21,6 +21,15 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link th:href="@{/css/eventos.css}" rel="stylesheet" />
 
+    <link th:href="@{/css/chosen.css}" rel="stylesheet" />
+    <link th:href="@{/css/ImageSelect.css}" rel="stylesheet" />
+    <script src="/js/chosen.jquery.js" th:href="@{/js/chosen.jquery.js}"></script>
+    <script src="/js/ImageSelect.jquery.js" th:href="@{/js/ImageSelect.jquery.js}"></script>
+
+
+
+
+
 
   <script>
     
@@ -43,42 +52,35 @@
       <div class="col-sm-4">
         <p style="font-size: 1.4em; margin-bottom: 2em;"><img src="/images/izquierda.svg" alt="" width="24px">Datos del evento<img src="/images/derecha.svg" alt="" width="24px"></p>
   
+        
         <form action="" method="POST" style="text-align: start;">
+
+          <p class="titles">Categoria de la reserva:</p>
+            <select class="my-select" id="tipoReserva">
+            <option value="default">Seleccione la categoria...</option>
+            <option value="bronce" data-img-src="../images/Bronce.png">Bronce</option>
+            <option value="plata" data-img-src="../images/Plata.png">Plata</option>
+            <option value="oro" data-img-src="../images/Oro.png">Oro</option>
+          </select>
+          <script>
+          $(".my-select").chosen();
+          </script>
+
           <p class="titles">Fecha de entrada: </p>
-          <i class="fas fa-calendar-day"></i>
+          <i class="fas fa-calendar-check"></i>
           <input id="checkin" class="formItem"   type="date" placeholder="Fecha" value="2001-01-01">
 
           <p class="titles">Fecha de salida: </p>
-          <i class="fas fa-calendar-day"></i>
+          <i class="far fa-calendar-check"></i>
           <input id="checkout" class="formItem"   type="date" placeholder="Fecha" value="2001-01-01">
       
-          <!-- <p class="titles"> Horario: </p>
-          <i class="fas fa-clock"></i> 
-          <select id="horario" class="formItem" >
-            <option value="9am">09:00 hs</option>
-            <option value="10am">10:00 hs</option>
-            <option value="11am">11:00 hs</option>
-            <option value="mediodia">12:00 hs</option>
-            <option value="1pm">13:00 hs</option>
-            <option value="2pm">14:00 hs</option>
-            <option value="3pm">15:00 hs</option>
-            <option value="4pm">16:00 hs</option>
-            <option value="5pm">17:00 hs</option>
-            <option value="6pm">18:00 hs</option>
-            <option value="7pm">19:00 hs</option>
-            <option value="8pm">20:00 hs</option>
-            <option value="9pm">21:00 hs</option>
-            <option value="10pm">22:00 hs</option>
-            <option value="11pm">23:00 hs</option>
-            <option value="medianoche">00:00 hs</option>
-          </select> -->
       
           <p class="titles">Cantidad de adultos: </p>
           <i class="fas fa-user-tie"></i>
           <input id="adultos" class="formItem"  type="number"  placeholder="Cantidad de adultos" value="0">
 
           <p class="titles">Cantidad de niños: </p>
-          <i class="fas fa-user-tie"></i>
+          <i class="fas fa-child"></i>
           <input id="ninios" class="formItem"  type="number"  placeholder="Cantidad de niños" value="0">
   
           <p class="titles">Edad de los niños:</p>
@@ -86,31 +88,25 @@
           <div id="edades" class="edadesninios">
           </div>
 
-  
 
-  
-          <p class="titles">Tipo de evento:</p>
-          <i class="fas fa-glass-cheers"></i>
-  
-          <select class="formItem" id="horario">
-            <option value="boda">Boda</option>
-            <option value="cumpleanios">Cumpleaños</option>
-            <option value="aniversario">Aniversarios</option>
-            <option value="conferencia">Conferencia</option>
-            <option value="coorporativa">Presentacion coorporativa</option>
-            <option value="coctel">Coctel</option>
-            <option value="degustacion">Degustacion de producto</option>
-            <option value="comunitaria">Fiesta comunitaria</option>
-         
+          <p class="titles">Tipo de servicio:</p>
+          <i class="fas fa-utensils"></i>  
+          <select class="formItem" id="tipoServicio">
+            <option value="simple">Desayuno incluido</option>
+            <option value="media">Media Pension</option>
+            <option value="completa">Pension Completa</option>
           </select>
-          <p class="titles">Servicio de catering:</p>
-          <i class="fas fa-hand-holding"></i>
-  
-  
-          <input type="checkbox" id="catering"value="Catering">
-  
-  
-          <label for="catering"> Contratacion Catering</label><br>
+
+          <p class="titles">Tipo de habitacion:</p>
+          <i class="fas fa-bed"></i>
+            <select class="formItem" id="tipoHabitacion">
+            <option value="simple">Simple</option>
+            <option value="doble">Doble</option>
+            <option value="triple">Tiple</option>
+          </select>
+
+
+          
          
         </form>
       </div>
